@@ -30,3 +30,20 @@
 * Face Cards (Jack, Queen, King) count as a value of 10
 * Aces can as either 1 or 11 (which ever value is preferable to the player)
 '''
+
+from src.deck import Deck
+from src.hand import Hand
+
+test_deck = Deck()
+test_deck.shuffle_deck()
+
+test_player = Hand()
+pulled_card = test_deck.deal_card()
+print(pulled_card)
+test_player.add_card(pulled_card)
+
+print(test_player.value)
+
+test_player.add_card(test_deck.deal_card())
+print(test_player.value)
+print(test_player.aces)
